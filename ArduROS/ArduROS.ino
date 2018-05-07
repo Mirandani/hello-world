@@ -45,7 +45,7 @@ void setup() {
   pinMode(Trigger, OUTPUT);       //SESNOR_PIN OUTPUT
   pinMode(Echo, INPUT);           //SENSOR_PIN INPUT
   digitalWrite(Trigger, LOW);     //SET PIN AS LOW
- // Serial.begin(9600);
+  Serial.begin(9600);
 /*TIMER SETUP*/
   Timer1.initialize(1000000);     //1 seg
 /*ROS Node initialization*/
@@ -78,8 +78,10 @@ void loop() {
   
 if(cm<80 || cm>90){
    Timer1.attachInterrupt(ISR_Blink);
+   blinkCount=1;
 }
-if(N>20) //20 seg
+
+if(N>10) // seg
 {
  Timer1.detachInterrupt();
  blinkCount=0; 
@@ -87,21 +89,18 @@ if(N>20) //20 seg
 else if(N==0)
 {
    digitalWrite(pinPanel,HIGH); //disabled 
-   digitalWrite(ledPin, LOW);
 }
 else if(N>0)
 {
   digitalWrite(pinPanel,LOW); //enabled
-  digitalWrite(ledPin, HIGH);
 }
-//Serial.print("cm = ");
-//Serial.print(cm);
-//Serial.print("N = ");
-//Serial.println(N);
+Serial.print("cm = ");
+Serial.print(cm);
+Serial.print("N = ");
+Serial.println(N);
  /*ROS*/  /*PUBLISHER*/
   str_msg.data = cm;
   chatter.publish( &str_msg ); 
   nh.spinOnce(); 
   interrupts();    
 }
-
