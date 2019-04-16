@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title> Ejemplo de curso de html css Y js</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" href="ejemplo3.css">
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- 	<script type="text/javascript" src="micodigo.js"></script> -->
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/kickstart.js"></script> <!-- KICKSTART -->
+	<link rel="stylesheet" href="css/kickstart.css" media="all" /> <!-- KICKSTART -->
+
+	
+
+	<header id='micabecera'>
+		<h1 id = "mititulo">Ejemplos del curos de HTML, CSS y JS</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">INICIO</a></li>
+				<li>EJEMPLOS HTML</li>
+				<ul>
+					<li><a href="1-base.html">
+					Documento base blanco</a></li>
+					<li><a href="2-primer.html">Primer ejemplo</a></li>
+					<li><a href="3-lista.html">Lista</a></li>
+					<li><a href="4-semanticas.html">Etiquetas semanticas HTML5</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+</header>
+
+<!-- <section style="display:none;"> -->
+<section >
+	<article><h1>Documento Base en blanco</h1>
+		
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+				function prueba_evento(x)
+				{
+					console.log('Llamada a prueba_evento');
+					if(x<50){
+						alert("Menor que 50");}
+					else{
+						alert("Mayor o igual a 50");		
+					}
+					for (var i =1; i <=x; i++){
+						console.log("cuenta" + i);
+					}
+
+					var i =1;
+					while(i<=x)
+					{
+						console.log("Cuentas2"+i)
+						i++;
+					}
+				}
+
+				function ampliar_info(){
+					var ampliado = document.getElementById('texto_ampliado');
+					var resumen = document.getElementById('texto_resumen');
+					var enlace = document.getElementById('enlace_ver');
+					
+					if (resumen.style.display == 'block' || resumen.style.display == '') 
+					{
+
+						$('#texto_resumen').hide()
+						$('#texto_ampliado').show()
+						ampliado.style.display = 'block'
+						enlace.innerHTML = 'Ocultar mas información';
+					}
+					else
+					{
+						$('#texto_resumen').show()
+						$('#texto_ampliado').hide()
+						enlace.innerHTML = 'Ver mas información';
+					}				
+
+				}
+
+			$('#enlace_ver').on('click',function(e){
+				ampliar_info();  
+			});
+			});
+
+		</script>
+
+			<a id="enlace_ver" onclick="javascript:ampliar_info();"> Ver mas informacion </a><br><br>
+
+			<a href="#" onclick="javascript:prueba_evento(100);"> Otro enlace e prueba </a><br>
+
+			<p id="texto_resumen">Texto resumen de este articulo</p>
+
+			<p id="texto_ampliado" style="display: none">Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo. Texto ampliado de este articulo.</p>
+
+
+
+
+		<script type="text/javascript">
+			function muestra(x){
+				altert(x);
+			}
+
+		</script>
+
+	</article>
+	<article><h1>Primer ejemplo</h1></article>
+
+
+
+	<article><h1>Lista</h1></article>
+	<article><h1>Etiquetas semanticas html5</h1></article>
+	<!-- <video width="320" height="240" controls>
+		<source src="Ejemplo_de_video.mp4" type="video/mp4">
+		<source src="Ejemplo_de_video.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>  -->
+		<audio></audio>
+</section>
+
+
+<!-- formularios -->
+<br>
+<form method="post" action="result.php" style="margin-top: 160px;">
+	<input type="text" value="Texto esciba usted" name="Nombre" /><br>
+	<input type="checkbox"  /><br>
+	<input type="button" value="pulsame" name=""><br>
+
+	<select name="destino" id="destino">
+		<option>Opcion 1</option>
+		<option selected="selected">Opcion 2</option>
+		<option>Opcion 3</option>
+	</select><br>
+
+	<input type="radio" name="pq" /> Opcion uno <br>
+	<input type="radio" name="pq" /> Opcion dos <br>
+	<input type="radio" name="pq" /> Opcion tres <br>
+
+	<textarea>Textro de prueba del textarea</textarea><br>
+	<input type="submit" value="Enviar"><br>
+	<input type="hidden" name="oculto" value="37" />
+
+</form>
+
+<footer>
+	Fichero de ejemplo 
+	"Etiquetas sematnicas de HTML5 del curso"
+	sobre HTML, CSS Y Javascript
+</footer>
+
+</body>
+</html>
