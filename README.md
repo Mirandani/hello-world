@@ -8,3 +8,4 @@ https://github.com/sourcecode369/ml-algorithms-on-scikit-and-keras
 https://github.com/StephanieStallworth/Association_Rule_Learning_Python
 
 https://github.com/sourcecode369/ml-algorithms-on-scikit-and-keras
+https://github.com/topics/association-rule-learning
